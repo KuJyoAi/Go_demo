@@ -1,0 +1,16 @@
+syntax = "proto3";
+option go_package="./;model";
+package model;
+
+message Message {
+  int64 SenderId = 1;
+  int64 ReceiverId = 2;
+  bytes Data = 3;
+  bool IsGroup = 4;
+  enum MessageType{
+    Group = 0;
+    Private = 1;
+    BroadCast = 2;
+  }
+  MessageType Type = 5;
+}
